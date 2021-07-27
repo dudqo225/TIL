@@ -81,3 +81,14 @@ git remote add <nickname> <URL>
 git push <nickname> <branch name> # 생성한 커밋들을 원격 저장소에 업로드
 ```
 
+
+
+#### 수정
+
+- **`mv`**  : 파일명 변경
+  - 기존 `git`으로 관리되고 있는 폴더 내 파일명을 바꿔주는 명령어
+
+```
+git mv <preivous file name> <following file name>
+```
+
