@@ -14,10 +14,20 @@
 
 ## Table of Contents
 
+#### Algorithm
+
+#### Computer Science
+
+#### Git
+
+#### Linux
+
 #### Python
 
-#### linux
+#### Web
 
-#### git
+#### 
 
-#### Algorithm
+#### 
+
+#### 
