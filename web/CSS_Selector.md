@@ -5,6 +5,15 @@
 
 </br></br>
 
+### Selector
+
+- 적용 순서
+  - `!important` > `인라인` > `#(id)` > `.(class)` > `요소 선택자` > `소스 순서`
+
+
+
+</br></br>
+
 - CSS Selector 연습을 위한 깃허브 링크
 
   - [CSS Diner](flukeout.github.io)
