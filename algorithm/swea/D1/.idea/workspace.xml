@@ -76,6 +76,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -83,20 +84,26 @@
               <item name="D1" type="b2602c69:ProjectViewProjectNode" />
               <item name="D1" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
+=======
             <path>
               <item name="D1" type="b2602c69:ProjectViewProjectNode" />
               <item name="D1" type="462c0819:PsiDirectoryNode" />
               <item name="1545_거꾸로출력해보아요" type="462c0819:PsiDirectoryNode" />
             </path>
+>>>>>>> 7e1e9bb391c50b20ec1e8dcb384f451d61ae4cfd
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$USER_HOME$/algorithm" />
+=======
+    <property name="last_opened_file_path" value="$USER_HOME$/algo_test" />
+>>>>>>> e78f7c9eb4e59d7731c243a6ac3143033a3f847e
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -242,7 +249,15 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="976" height="1056" extended-state="0" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22790202" />
+=======
+<<<<<<< HEAD
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24980299" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22790202" />
+>>>>>>> 7e1e9bb391c50b20ec1e8dcb384f451d61ae4cfd
+>>>>>>> e78f7c9eb4e59d7731c243a6ac3143033a3f847e
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
