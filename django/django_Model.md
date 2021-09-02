@@ -246,3 +246,64 @@ python manage.py shell_plus
     - `input type`이 `hidden`으로 작성되고 `value`는 django에서 생성한 `hash` 값이 들어있음
     - 해당 태그가 없으면 django 서버는 403 forbidden을 응답
 
+<br>
+
+##### redirect()
+
+- 새 url로 되돌림
+- 인자에 따라서 HttpResponseRedirect를 반환
+- 브라우저는 현재 경로에 따라 전체 URL을 재구성(reconstruct)
+- 사용 가능한 인자
+  - model
+  - view name
+  - absolute / relative URL
+
+<br>
+
+### 6. Admin Site
+
+#### Automatic admin interface
+
+- 서버 관리자가 활용하기 위한 페이지
+- Model class를 `admin.py` 에 등록하고 관리
+- `django.contrib.auth` 모듈에서 제공된다
+- 레코드 생성여부 확인할 때 사용가능하고, 직접 레코드를 삽입할 수도 있다
+
+##### admin 생성
+
+```bash
+$ python manage.py createsuperuser
+```
+
+- 관리자 계정 생성 후 `/admin` 페이지에 가서 관리자 로그인
+- `auth`에 관련된 기본 테이블이 생성되지 않으면 관리자 계정을 생성할 수 X
+
+##### admin 등록
+
+```python
+from .models import <ClassName>
+admin.site.register(<ClassName>)
+```
+
+- `admin.py`는 관리자 사이트에 객체가 관리자 인터페이스를 가지고 있다는 것을 알려준다
+- `models.py` 에 정의한 `__str__` 의 형태로 객체가 표현됨
+
+##### ModelAdmin options
+
+- list_display
+
+  - models.py에서 정의한 각 속성들의 값을 admin 페이지에 출력하도록 설정
+
+  ```python
+  class ArticleAdmin(admin.ModelAdmin):
+      list_display = ('pk', 'id', 'title', 'content')
+  
+  admin.site.register(Article, ArticleAdmin)
+  ```
+
+- list_filter, list_display_links 등 다양한 optins은 공식문서 참고
+
+  - [django 공식문서](https://docs.djangoproject.com/en/3.2/ref/contrib/admin/#modeladmin-options)
+
+
+
