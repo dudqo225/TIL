@@ -14,20 +14,17 @@
 
 ## Table of Contents
 
-#### Algorithm
+1. [Algorithm](https://github.com/dudqo225/TIL/tree/master/algorithm)
 
-#### Computer Science
+2. [Computer Science](https://github.com/dudqo225/TIL/tree/master/computerScience)
 
-#### Git
+3. [Django](https://github.com/dudqo225/TIL/tree/master/django)
 
-#### Linux
+4. [Git](https://github.com/dudqo225/TIL/tree/master/git)
 
-#### Python
+5. [Linux](https://github.com/dudqo225/TIL/tree/master/linux)
 
-#### Web
+6. [Python](https://github.com/dudqo225/TIL/tree/master/python)
 
-#### 
+7. [Web](https://github.com/dudqo225/TIL/tree/master/web)
 
-#### 
-
-#### 
