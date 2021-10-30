@@ -143,6 +143,99 @@
   - DOM이 변경되어도 collection 내용에는 영향을 주지 않음
   - `querySelectorAll()`의 반환 NodeList만 static collection
 
+<br>
 
+#### DOM - 변경 메서드
 
-p.49 부터 정리!
+- `document.createElement()`
+  - 작성한 태크명의 HTML 요소를 생성하여 반환
+- `.append()`
+  - 특정 부모 Node의 자식 NodeList 중 마지막 자식 다음에 Node 객체나 DOMString을 삽입
+  - 여러 개의 Node 객체, DOMString을 추가할 수 있음
+  - 반환 값이 없음
+- `appendChild()`
+  - 한 Node를 특정 부모 Node의 자식 NodeList 중 마지막 자식으로 삽입 (Node만 추가 가능)
+  - 한번에 오직 하나의 Node 추가 가능
+  - 주어진 Node가 이미 문서에 존재하는 다른 Node를 참조한다면 새로운 위치로 이동
+
+##### append() vs. appendChild()
+
+- `.append()` 를 사용하면 DOMString 객체를 추가할 수 있지만, `.appendChild()` 는 Node 객체만 허용
+- `.append()`는 반환 겂이 없지만, `.appendChild()`는 추가된 Node 객체를 반환
+- `.append()`는 여러 Node 객체와 문자열을 추가할 수 있지만, `.appendChild()`는 하나의 Node 객체만 추가할 수 있음
+
+#### DOM - 변경 관련 속성
+
+- `Node.innerText`
+  - Node 객체와 그 자손의 텍스트 컨텐츠(DOMString)를 표현 (해당 요소 내부의 raw text). 사람이 읽을 수 있는 요소만 남김
+  - 줄 바꿈을 인식하고 숨겨진 내용을 무시하는 등 스타일링이 적용된 모습으로 표현
+- `Element.innerHTML`
+  - 요소 내에 포함된 HTML 마크업을 반환
+  - XSS 공격에 취약하므로 사용시 주의해야 함
+    - 공격자가 웹사이트 클라이언트 측 코드에 악성 스크립트를 삽입해 공격하는 방법
+    - 피해자(사용자)의 브라우저가 악성 스크립트를 실행하며 공격자가 엑세스 제어를 우회하고 사용자를 가장 할 수 있도록 함 (CSRF 공격과 유사)
+
+<br>
+
+#### DOM - 삭제 메서드
+
+- `.remove()`
+  - Node가 속한 트리에서 해당 Node를 제거
+- `.removeChild()`
+  - DOM에서 자식 Node를 제거하고 제거된 Node를 반환
+  - Node는 인자로 들어가는 자식 Node의 부모 Node
+
+<br>
+
+#### DOM - 속성 메서드
+
+- `.setAttribute(name, value)`
+  - 지정된 요소의 값을 설정
+  - 속성이 이미 존재하면 값을 갱신, 존재하지 않으면 지정된 이름(name)과 값(value)으로 새로운 속성 추가
+- `.getAttribute(attributeName)`
+  - 해당 요소의 지정된 값(문자열)을 반환
+  - 인자(attributeName)는 값을 얻고자 하는 속성의 이름
+
+<br>
+
+## Event Listener
+
+### Event
+
+- 네트워크 활동이나 사용자와의 상호작용 같은 사건의 발생을 알리기 위한 객체
+- 이벤트 발생
+  - 마우스 클릭/키보드 누르기 등 사용자 행동으로 발생 가능
+  - 특정 메서드(`Element.click()`)를 호출하여 프로그래밍적으로도 만들어 낼 수 있음
+
+#### Event 기반 인터페이스
+
+- AnimationEvent, ClipboardEvent, DragEvent 등
+- UIEvent
+  - 간단한 사용자 인터페이스 이벤트
+  - Event의 상속을 받음
+  - MouseEvent, KeyboardEvent, InputEvent, FocutEvent 등의 부모 객체 역할을 함
+
+#### Event handler
+
+- 대상에 특정 이벤트가 발생하면, 할일을 등록한다.
+
+- `.addEventListener(type, listener[, options])`
+  - 지정한 이벤트가 대상에 전달될 때마다 호출할 함수를 설정
+  - 이벤트를 지원하는 모든 객체(Element, Document, Window 등)를 대상으로 지정 가능
+
+- type
+  - 반응할 이벤트 유형 (대소문자 구분 문자열)
+- listener
+  - 지정된 타입의 이벤트가 발생했을 때 알림을 받는 객체
+  - EventListener 인터페이스 혹은 JS function 객체(콜백 함수)여야 함
+
+#### Event 취소
+
+- `.preventDefault()`
+  - 현재 이벤트의 기본 동작을 중단
+  - 태그의 기본 동작을 작동하지 않게 막음
+    - ex. a 태그의 기본동작은 클릭시 링크 이동. form 태그의 기본동작은 form 데이터 전송
+  - 이벤트를 취소할 수 있는 경우, 이벤트 전파를 막지않고 그 이벤트를 취소
+
+- 취소할 수 없는 이벤트도 존재함
+  - 이벤트 취소 가능 여부는 `event.cancelable`을 사용해 확인할 수 있음
