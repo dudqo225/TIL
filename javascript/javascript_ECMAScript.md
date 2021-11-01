@@ -1,4 +1,4 @@
-# JavaScript | variables & identifiers
+# JavaScript | ECMAScript
 
 ### 목차
 
