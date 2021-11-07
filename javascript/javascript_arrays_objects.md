@@ -112,7 +112,7 @@ array.map((element, index, array) => {
 // 예시
 const numbers = [1, 2, 3, 4, 5]
 
-const doubleNums = number.map((num) => {
+const doubleNums = numbers.map((num) => {
     return num * 2
 })
 console.log(doubleNums) // [2, 4, 6, 8, 10]
@@ -135,7 +135,7 @@ array.filter((element, index, array) => {
 // 예시
 const numbers = [1, 2, 3, 4, 5]
 
-const oddNums = number.filter((num, index) => {
+const oddNums = numbers.filter((num, index) => {
     return num % 2
 })
 console.log(oddNums) // 1, 3, 5
