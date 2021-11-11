@@ -19,7 +19,8 @@
 3. [Database](https://github.com/dudqo225/TIL/tree/master/database)
 4. [Django](https://github.com/dudqo225/TIL/tree/master/django)
 5. [Git](https://github.com/dudqo225/TIL/tree/master/git)
-6. [Linux](https://github.com/dudqo225/TIL/tree/master/linux)
-7. [Python](https://github.com/dudqo225/TIL/tree/master/python)
-8. [Web](https://github.com/dudqo225/TIL/tree/master/web)
+6. [JavaScript](https://github.com/dudqo225/TIL/tree/master/javascript)
+7. [Linux](https://github.com/dudqo225/TIL/tree/master/linux)
+8. [Python](https://github.com/dudqo225/TIL/tree/master/python)
+9. [Web](https://github.com/dudqo225/TIL/tree/master/web)
 
