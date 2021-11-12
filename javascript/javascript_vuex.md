@@ -12,6 +12,10 @@
 
 ## Vuex
 
+- 
+- asda
+- asd
+
 ## Vuex Core Concepts
 
 ## Todo app with Vuex
