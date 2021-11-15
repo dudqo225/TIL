@@ -1,4 +1,4 @@
-Django | REST API
+# Django | REST API
 
 ### 목차
 
@@ -285,7 +285,7 @@ django에서 Model의 필드를 설정하는 것과 동일
 from rest_framework import serializers
 from .models import Article
 
-classs ArticleListSerializer(serializers.ModelSerializer):
+class ArticleListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
         fields = ('id', 'title',)
