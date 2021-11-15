@@ -2,7 +2,7 @@
 
 ### SOP
 
-- Same-Origin Policy
+- **S**ame-**O**rigin **P**olicy
 - 동일 출처 정책
 - 특정 출처(origin)에서 불러온 문서나 스크립트가 다른 출처에서 가져온 리소스와 상호작용 하는 것을 제한하는 보안 방식
 - 잠재적으로 해로울 수 있는 문서를 분리함으로써 공격받을 수 있는 경로를 줄임
@@ -19,7 +19,7 @@
 
 ### CORS
 
-- Cross-Origin Resource Sharing
+- **C**ross-**O**rigin **R**esource **S**haring
 - 교차 출처 리소스(자원) 공유
 - 추가 HTTP headers를 사용하여, 특정 출처에서 실행중인 웹 애플리케이션이 다른 출처의 자원에 접근할 수 있는 권한을 부여하도록 브라우저에 알려주는 체제
 - 리소스가 자신의 출처(Protocol, Host(Domain), Port) 와 다를 때 교차 출처 HTTP 요청을 실행
@@ -57,6 +57,8 @@
 
 $ pip install django-cors-headers
 ```
+
+
 
 ```django
 # settings.py
