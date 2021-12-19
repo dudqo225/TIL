@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63e426ec-c1e3-41fb-a0bd-91008ceaf37b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../swea/D2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../swea/D2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../swea/D3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../swea/D3/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="63e426ec-c1e3-41fb-a0bd-91008ceaf37b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,10 +11,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/15829_Hashing/s1.py">
+        <entry file="file://$PROJECT_DIR$/11050_이항계수/s1.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="66">
-              <caret line="3" selection-start-line="3" selection-end-line="22" selection-end-column="8" />
+              <caret line="3" selection-start-line="3" selection-end-line="12" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -53,6 +50,19 @@
         <option value="$PROJECT_DIR$/4153_직각삼각형/s1.py" />
         <option value="$PROJECT_DIR$/15829_Hashing/input.txt" />
         <option value="$PROJECT_DIR$/15829_Hashing/s1.py" />
+        <option value="$PROJECT_DIR$/2292_벌집/s1.py" />
+        <option value="$PROJECT_DIR$/2292_벌집/input.txt" />
+        <option value="$PROJECT_DIR$/2231_분해합/input.txt" />
+        <option value="$PROJECT_DIR$/2231_분해합/s1.py" />
+        <option value="$PROJECT_DIR$/2869_달팽이는올라가고싶다/s1.py" />
+        <option value="$PROJECT_DIR$/2869_달팽이는올라가고싶다/s2.py" />
+        <option value="$PROJECT_DIR$/2869_달팽이는올라가고싶다/input.txt" />
+        <option value="$PROJECT_DIR$/2869_달팽이는올라가고싶다/README.md" />
+        <option value="$PROJECT_DIR$/2839_설탕배달/input.txt" />
+        <option value="$PROJECT_DIR$/2839_설탕배달/s1.py" />
+        <option value="$PROJECT_DIR$/11050_이항계수/input.txt" />
+        <option value="$PROJECT_DIR$/11050_이항계수/s1.py" />
+        <option value="$PROJECT_DIR$/11050_이항계수/README.md" />
       </list>
     </option>
   </component>
@@ -78,6 +88,11 @@
               <item name="CLASS_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="CLASS_2" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CLASS_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CLASS_2" type="462c0819:PsiDirectoryNode" />
+              <item name="11050_이항계수" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -99,7 +114,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.s1 (3)">
+  <component name="RunManager" selected="Python.s1 (2)">
     <configuration name="s1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CLASS_2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -108,11 +123,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/1085_직사각형에서탈출" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/2839_설탕배달" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/1085_직사각형에서탈출/s1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2839_설탕배달/s1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -129,11 +144,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/4153_직각삼각형" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/11050_이항계수" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/4153_직각삼각형/s1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/11050_이항계수/s1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,7 +157,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="s1 (3)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="s1 (5)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CLASS_2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -150,11 +165,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/15829_Hashing" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/2231_분해합" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/15829_Hashing/s1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2231_분해합/s1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -171,11 +186,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/10250_ACM호텔" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/2869_달팽이는올라가고싶다" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/10250_ACM호텔/s1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2869_달팽이는올라가고싶다/s1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -192,11 +207,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/2751_수정렬하기2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/2869_달팽이는올라가고싶다" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2751_수정렬하기2/s2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2869_달팽이는올라가고싶다/s2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -207,11 +222,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.s1 (3)" />
         <item itemvalue="Python.s1 (2)" />
         <item itemvalue="Python.s1 (1)" />
-        <item itemvalue="Python.s1" />
         <item itemvalue="Python.s2" />
+        <item itemvalue="Python.s1" />
+        <item itemvalue="Python.s1 (5)" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +246,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="976" height="1056" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28328007" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.28328007" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -410,8 +425,105 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/15829_Hashing/s1.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2292_벌집/s1.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
-          <caret line="3" selection-start-line="3" selection-end-line="22" selection-end-column="8" />
+          <caret line="3" selection-start-line="3" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2292_벌집/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2231_분해합/s1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2231_분해합/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2869_달팽이는올라가고싶다/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2869_달팽이는올라가고싶다/s1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" selection-start-line="3" selection-end-line="15" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2869_달팽이는올라가고싶다/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="139">
+            <caret line="49" column="3" lean-forward="true" selection-start-line="49" selection-start-column="3" selection-end-line="49" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2869_달팽이는올라가고싶다/s2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2839_설탕배달/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2839_설탕배달/s1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/11050_이항계수/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/11050_이항계수/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="132">
+            <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/11050_이항계수/s1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" selection-start-line="3" selection-end-line="12" selection-end-column="10" />
         </state>
       </provider>
     </entry>
