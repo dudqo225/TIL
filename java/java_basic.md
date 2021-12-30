@@ -23,6 +23,36 @@
 
 
 
+#### 용어
+
+##### Java SE
+
+- Java Platform, Standard Edition. 자바의 표준안
+- 구체적인 소프트웨어가 아닌, 소프트웨어의 설계도 (명세서, spec, specification)
+- JCP(Java Community Process)라는 조직에 의해 만들어짐
+
+##### JDK
+
+- Java Development Kit
+- JAva SE의 표준안에 따라서 만들어진 구체적인 소프트웨어.
+- Java 프로그램을 실행하면 Java 코드를 컴파일하는 컴파일러와 개발에 필요한 각종 도구 및 JRE가 포함되어 있음
+- 개발자를 위한 자바 버전
+
+##### JRE
+
+- Java Runtime Environment
+- 자바가 실제로 동작하는 데 필요한 JVM, 라이브러리, 가종 파일들이 포함되어 있음
+- 일반인을 위한 자바 버전
+
+##### JVM
+
+- Java Virtual Machine
+- 자바가 실제로 구동하는 환경
+
+![image-20211229152305484](java_basic.assets/image-20211229152305484.png)
+
+
+
 ### 2. 자바 기초
 
 #### 역사
@@ -66,6 +96,10 @@
 ### 3. 자바 프로그래밍
 
 #### 실행 과정
+
+1. 코드 작성
+2. 컴퓨터가 실행할 수 있는 형태로 코드를 컴파일
+3. 컴파일된 프로그램을 실행
 
 ![image-20211227145256249](java_basic.assets/image-20211227145256249.png)
 
