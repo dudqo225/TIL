@@ -6,7 +6,8 @@
 > 2. 메소드화
 > 3. 객체화
 > 4. 멤버
-> 5. 참고 자료
+> 5. 초기화와 생성자
+> 6. 참고 자료
 
 <br>
 
@@ -428,6 +429,89 @@ public class ClassMemberDemo {
 - 인스턴스 변수 → Non-Static Field
 - 클래스 변수 → Static Field
 - 필드(Field)란 클래스 전역에서 접근할 수 있는 변수를 의미함
+
+
+
+***
+
+### 5. 초기화와 생성자
+
+#### 초기화
+
+- 어떤 일을 시작하기 전에 준비를 하는 것
+- **생성자(constructor)**
+
+```java
+// 계산기 예제의 초기화
+Calculator c1 = new Calculator();
+c1.setOprands(10, 20);
+c1.sum();
+c1.avg();
+```
+
+- `c1.setOprands(10, 20)` 처럼 인스턴스 변수를 설정하는 메소드를 호출하지 않는다면?
+
+```java
+c1.sum();
+c1.avg();
+```
+
+- 위 2 개의 메소드를 호출해도 원하는 결과를 얻을 수 없음
+
+- 객체 Calculator를 사용하기 위해 반드시 `setOprands` 를 호출해야 함
+  - 절차를 기억해야 하기 때문에 사용자 입장에서 불편하고,
+  - 잘못된 사용으로 오류가 발생할 확률이 높아진다.
+
+<br>
+
+#### 생성자
+
+- 인스턴스가 생성될 때, left / right 변수 값을 입력하도록 강제한다면?
+
+```java
+class Calculator {
+    int left, right;
+ 
+    public Calculator(int left, int right) {
+        this.left = left;
+        this.right = right;
+    }
+ 
+    public void sum() {
+        System.out.println(this.left + this.right);
+    }
+ 
+    public void avg() {
+        System.out.println((this.left + this.right) / 2);
+    }
+}
+ 
+public class CalculatorDemo1 {
+ 
+    public static void main(String[] args) {
+ 
+        Calculator c1 = new Calculator(10, 20);
+        c1.sum();
+        c1.avg();
+ 
+        Calculator c2 = new Calculator(20, 40);
+        c2.sum();
+        c2.avg();
+    }
+ 
+}
+```
+
+- 절차를 하나 줄이고 객체 생성시 left / right 변수 값을 설정하는 과정을 강제
+
+##### 생성자의 특징
+
+1. 값을 반환하지 않음
+   - 생성자는 인스턴스를 생성해주는 역할을 하는 특수한 메소드
+   - 반환값을 필요로하는 작업에서는 생성자를 사용하지 X
+   - return이 없고, 반환값을 메소드 정의에 포함시키지도않음
+2. 생성자 이름 == 클래스 이름
+   - 자바에서 클래스 이름과 생성자 메소드 이름을 동일하게 적용하는 것이 약속임
 
 
 
