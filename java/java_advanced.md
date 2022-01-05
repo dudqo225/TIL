@@ -6,7 +6,7 @@
 >2. final
 >3. 인터페이스
 >4. 다형성
->5. 제네릭
+>5. 참고 자료
 
 <br>
 
@@ -385,4 +385,12 @@ public class Workspace{
     }
 }
 ```
+
+<br>
+
+***
+
+### 5. 참고 자료
+
+[생활코딩 - JAVA](https://opentutorials.org/course/1223/6127)
 
