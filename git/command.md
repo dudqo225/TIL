@@ -94,13 +94,29 @@ git mv <preivous file name> <following file name>
 
 <br>
 
-#### 오류 상황
+#### 특이 상황
 
-![image-20220111225556758](command.assets/image-20220111225556758.png)
+- 오류 발생
+  - 아래와 같이 git 프로세스가 이미 동작하고 있어서 `index.lock` 파일에 대해 문제가 생긴 상황![image-20220111225556758](command.assets/image-20220111225556758.png)
+  - 해결 방법
+    - 문제가 발생한 Git 저장소의 폴더 상단으로 이동
+    - Git bash, CMD 등 Terminal 실행
+    - 커맨드 입력 : `rm -f ./.git/index.lock`
+    - 이후 정상적으로 `add`, `commit` 작동하는 것을 확인
 
-- 위와 같이 git 프로세스가 이미 동작하고 있어서 `index.lock` 파일에 대해 문제가 생긴 상황
-- 해결 방법
-  - 문제가 발생한 Git 저장소의 폴더 상단으로 이동
-  - Git bash, CMD 등 Terminal 실행
-  - 커맨드 입력 : `rm -f ./.git/index.lock`
-  - 이후 정상적으로 `add`, `commit` 작동하는 것을 확인
+<br>
+
+- Commit Author 수정
+  - 협업을 하거나 로컬에서 혼자 작업하다 보면, 여러 아이디를 사용하다 보니 커밋 작성자가 뒤바뀌는 상황이 발생하기도 함. 필자의 경우, `github` 와 `gitlab` 을 동시에 사용하다 보니, 원격으로 git 저장소 설정시 `git config --global` 설정을 하면서 user.name과 user.email 이 수정되는 상황이 발생했다. 이러한 상황에서 commit 자체에 대한 내용, 작성자 등을 수정할 수 있는 기능을 활용할 수 있다.
+  - 해결방법
+    - commit의 hash 값 찾기
+      - `git log` 명령어로 확인 가능
+    - `rebase` 사용하기
+      - `git rebase -i {변경할 커밋의 해시값}^`  입력
+      - 편집모드 이동
+    -  `i` 버튼으로 편집모드로 전환
+      - `pick` → `edit` 으로 수정
+      - `:wq` 명령어로 저장 후 종료
+    - `git commit --amend --author="작성자명 <email 주소>"` 입력
+    - `git rebase --continue` : rebase 작업 종료
+    - `git push origin +브랜치명` : 강제로 push 진행
