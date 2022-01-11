@@ -92,3 +92,15 @@ git push <nickname> <branch name> # 생성한 커밋들을 원격 저장소에 �
 git mv <preivous file name> <following file name>
 ```
 
+<br>
+
+#### 오류 상황
+
+![image-20220111225556758](command.assets/image-20220111225556758.png)
+
+- 위와 같이 git 프로세스가 이미 동작하고 있어서 `index.lock` 파일에 대해 문제가 생긴 상황
+- 해결 방법
+  - 문제가 발생한 Git 저장소의 폴더 상단으로 이동
+  - Git bash, CMD 등 Terminal 실행
+  - 커맨드 입력 : `rm -f ./.git/index.lock`
+  - 이후 정상적으로 `add`, `commit` 작동하는 것을 확인
