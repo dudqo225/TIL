@@ -16,6 +16,8 @@
 >    5. [Refresh Token](#Refresh-Token)
 >    6. [Refresh Token 저장소](#Refresh-Token-저장소)
 > 2. [Spring Security](#2-Spring-Security)
+>    1. [JWT & Security 관련 의존성 추가](#JWT-&-Security-관련-의존성-추가)
+>    2. [사용자 (Member) 도메인 설계](#사용자-(Member)-도메인-설계)
 
 <br>
 
@@ -297,12 +299,6 @@ public class MemberController {
 - 원래는 github 같은 원격 저장소에 올라가지 않도록 별도로 보관하는 것이 안전하다.
 
 <br>
-
-### JWT와 Security 설정
-
-
-
-
 
 ##### 참고
 
