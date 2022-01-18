@@ -935,7 +935,18 @@ public class AuthController {
 
 ### 회원가입, 권한 검증
 
-#### 회원가입 API 생성
+#### SecurityUtil
+
+- 간단한 유틸리티 메소드를 만들기 위한 클래스 생성
+
+```java
+```
+
+
+
+
+
+
 
 
 

@@ -67,6 +67,6 @@
 
 [IoC란 무엇인가](https://velog.io/@jeong-god/IoC%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80)
 
-[Bean과 의존성 주입](https://ch4njun.tistory.com/219)]
+[Bean과 의존성 주입](https://ch4njun.tistory.com/219)
 
 [인프런 - 스프링 입문](https://www.inflearn.com/course/spring_revised_edition#curriculum)
