@@ -13,10 +13,10 @@
 - EC2 인스턴스 생성
   - Ubuntu
   - 보안 그룹 설정
-  - PuTTY 사용
-- 소스코드 빌드 & 배포
+  - PuTTY or MobaXterm사용
+- 소스코드 배포
   - Github Repo에서 저장소 Clone
-  - Java & Tomcat 설치
+  - Java & Tomcat 설치 | Nginx (?)
   - filezilla 설치
   - DB 설정
     - MySQL
@@ -43,6 +43,81 @@ $ sudo apt-get upgrade
 
 
 
+#### net-tools 설치
+
+```bash
+$ sudo apt-get install net-tools
+```
+
+
+
+***
+
+
+
+## Spring Boot 프로젝트 생성
+
+### Build - gradle
+
+- Gradle - Tasks - build - build로 프로젝트 빌드
+
+![image-20220125175148073](spring_project_deploy.assets/image-20220125175148073.png)
+
+- Project 폴더 > build > libs > ~SNAPSHOT.jar 파일
+  - EC2 > `/home/ubuntu/` 경로에 옮기기 (나중에)
+
+***
+
+
+
+## 소스코드 배포
+
+### Java / Tomcat 설치
+
+#### Java - Open JDK 설치
+
+- 8버전 JDK 설치
+
+```bash
+$ sudo apt-get install openjdk-8-jdk
+```
+
+***
+
+
+
+#### Tomcat 설치 및 실행
+
+- 스프링 부트 내장 Tomcat을 사용할 경우, 별도의 Tomcat 설치를 하지 않아도 됨
+- 설치 필요시 아래 명령어로 설치할 수 있음. 두 가지 버전 다 사용 가능
+
+```bash
+## Ver 1
+$ sudo apt-get install tomcat9
+```
+
+```bash
+## Ver 2
+# Tomcat 9 버전 다운로드
+$ wget http://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.27/bin/apache-tomcat-9.0.27.tar.gz -P /tmp
+
+# Tomcat 아카이브 추출 후 /opt/tomcat 디렉토리로 이동
+$ sudo tar xf /tmp/apache-tomcat-9*.tar.gz -C /opt/tomcat
+
+# Tomcat 버전 및 업데이트 제어 - Tomcat 설치 디렉토리를 기리키는 최신 심볼링크 생성
+$ sudo ln -s /opt/tomcat/apache-tomcat-9.0.27 /opt/tomcat/latest
+
+# 디렉토리 소유권을 사용자 및 Tomcat 그룹으로 변경
+$ sudo chown -RH tomcat: /opt/tomcat/latest
+
+# bin 디렉토리 내의 스크립트에는 실행 플래그가 있어야 함
+$ sudo sh -c 'chmod +x /opt/tomcat/latest/bin/*.sh'
+```
+
+***
+
+
+
 ### Filezilla 설치
 
 #### 파일 설치
@@ -59,7 +134,7 @@ $ sudo apt-get install filezilla
 $ filezilla
 ```
 
-
+***
 
 
 
@@ -69,6 +144,40 @@ $ filezilla
 
 ```bash
 $ sudo apt-get install mysql-server
+```
+
+
+
+#### MySQL 관련 명령어
+
+```bash
+# 외부 접속 기능 설정 (포트 3306 오픈)
+$ sudo ufw allow mysql
+
+# mysql 실행
+$ sudo systemctl start mysql
+
+# ubuntu 서버 재시작시 mysql 자동 시작
+$ sudo systemctl enable mysql
+```
+
+
+
+#### 원격 접속 IP 설정
+
+```bash
+# 설정 파일 열기
+$ sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+
+- `bind-address` 와 `mysqlx-bind-address` 부분 변경
+
+![image-20220125183341962](spring_project_deploy.assets/image-20220125183341962.png)
+
+- IP 변경 후 mysql 재시작
+
+```bash
+$ sudo service mysql restart
 ```
 
 
@@ -84,8 +193,18 @@ create user '{유저이름}'@'localhost' identified by '{유저비밀번호}';
 
 grant all privileges on *.* to '{유저이름}'@'localhost';
 
+flush privileges;
+```
+
+
+
+#### DB 생성
+
+```sql
 create database {DB이름} default character set utf8 collate utf8_general_ci;
 ```
+
+***
 
 
 
@@ -113,12 +232,19 @@ $ redis-server --version
 - 최대 사용 메모리 초과시 데이터 삭제 방법 설정
 
 ```bash
-// 설정파일 열기
+# 설정파일 열기
 $ sudo nano /etc/redis/redis.conf
 
-// 최대 사용 메모리양 설정 및 데이터 삭제방법 설정
+# 최대 사용 메모리양 설정 및 데이터 삭제방법 설정
 maxmemory 1g
 maxmemory-policy allkeys-lru
+```
+
+- 외부 접속 허용 설정 (MySQL과 같은 논리)
+
+```bash
+# redis.conf 파일
+bind 0.0.0.0
 ```
 
 
@@ -128,6 +254,8 @@ maxmemory-policy allkeys-lru
 ```bash
 $ sudo systemctl restart redis-server.service
 ```
+
+***
 
 
 
@@ -157,6 +285,8 @@ $ vim application.yml
     - `:wq` - 저장 후 종료
     - `:e [filename]` - 열기
 
+***
+
 
 
 ### 빌드 및 실행
@@ -178,3 +308,4 @@ $ nohup java -jar ${해당 .jar 파일} &
 ```
 
 - putty 접속이 끊겨도 백그라운드에서 프로젝트가 실행되는 명령어
+  - 실행 후, `ctrl + z` 로 백그라운드 실행 가능 (접속 끊겨도 실행되는지..?)
