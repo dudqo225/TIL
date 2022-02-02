@@ -18,17 +18,15 @@
 
 ## Table of Contents
 
-1. [Algorithm](https://github.com/dudqo225/TIL/tree/master/algorithm)
-2. [Computer Science](https://github.com/dudqo225/TIL/tree/master/computerScience)
-3. [Database](https://github.com/dudqo225/TIL/tree/master/database)
-4. [Django](https://github.com/dudqo225/TIL/tree/master/django)
-5. [Git](https://github.com/dudqo225/TIL/tree/master/git)
-6. [Java](https://github.com/dudqo225/TIL/tree/master/java)
-7. [JavaScript](https://github.com/dudqo225/TIL/tree/master/javascript)
-8. [Linux](https://github.com/dudqo225/TIL/tree/master/linux)
-9. [Network](https://github.com/dudqo225/TIL/tree/master/network)
-10. [Python](https://github.com/dudqo225/TIL/tree/master/python)
-11. [Web](https://github.com/dudqo225/TIL/tree/master/web)
-
-
-
+1. [Algorithm](./algorithm)
+2. [Computer Science](./computerScience)
+3. [Database](./database)
+4. [Django](./django)
+5. [Git](./git)
+6. [Java](./java)
+7. [JavaScript](./javascript)
+8. [Linux](./linux)
+9. [Network](./network)
+10. [Python](./python)
+10. [Server](./server)
+11. [Web](./web)
