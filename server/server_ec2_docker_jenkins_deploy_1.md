@@ -18,19 +18,21 @@
 
 
 
-전체적인 배포 과정은,
+전체적인 배포 과정은 다음과 같다.
 
-1. Local 에서 개발을 진행한다.
-2. GitHub (또는 GitLab) Repository에 코드 Push나 Pull Request와 같은 Action이 발생한다.
-3. GitHub Repository와 EC2에서 Docker 컨테이너로 띄워진 Jenkins는 Web Hook으로 연결되어 있다. Action이 발생하면 Web Hook을 통해서 Jenkins에서 이를 캐치하고 사전에 설정된대로 빌드가 이루어진다.
-4. Gradle을 통해서 Spring Boot 프로젝트에 대한 Build가 이루어지고, Dockerfile을 통해서 Docker 이미지가 생성된다.
-5. 이후 만들어진 Docker 이미지가 실행되면서 새로운 Docker 컨테이너로 Spring Boot 프로젝트를 띄운다.
-
-와 같다.
+1. **Local** 에서 개발을 진행한다.
+2. **GitHub (또는 GitLab) Repository**에 코드 Push나 Pull Request와 같은 Action이 발생한다.
+3. GitHub Repository와 EC2에서 Docker 컨테이너로 띄워진 Jenkins는 **Web Hook**으로 연결되어 있다. Action이 발생하면 Web Hook을 통해서 Jenkins에서 이를 캐치하고 사전에 설정된대로 빌드가 이루어진다.
+4. Gradle을 통해서 Spring Boot 프로젝트에 대한 **Build**가 이루어지고, Dockerfile을 통해서 **Docker Image**가 생성된다.
+5. 이후 만들어진 **Docker Image**가 **Run**(실행)되면서 새로운 Docker 컨테이너로 **Spring Boot 프로젝트를 띄운다**.
 
 
 
-지금부터, 각 과정에 대한 설명과 그 안에서 겪게 되는 여러 오류에 대해서 기록하겠다.
+참고로 데이터베이스(DB)의 안정성을 위해서 MySQL과 Redis DB는 Docker 컨테이너가 아닌, EC2 서버 자체에 설치하였다.
+
+
+
+지금부터 각 과정에 대한 설명과 그 안에서 겪었던 여러 오류에 대해서 기록하겠다.
 
 ***
 
@@ -104,4 +106,5 @@
 
 
 
-#### [Server | EC2 & Docker Deploy with Jenkins Ⅱ]() 에서 계속...
+#### [Server | EC2 & Docker Deploy with Jenkins Ⅱ](./server_ec2_docker_jenkins_deploy_2) 에서 계속...
+

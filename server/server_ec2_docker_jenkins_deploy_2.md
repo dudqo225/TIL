@@ -2,55 +2,79 @@
 
 
 
-## 배포 순서
+지난 1편에 이어서, 배포 과정을 계속하기 위해서는 AWS EC2 서버에 Docker와 Jenkins가 깔려있어야 한다. 먼저 Docker를 깔아보자.
 
-1. Git Repository 생성
 
-2. Spring Boot 프로젝트 생성 및 Git Upload
 
-3. EC2에 Docker 설치
+### 3. Docker 설치
 
-   1. `sudo apt install docker.io`
+```bash
+$ sudo apt install docker.io
 
-4. EC2에서 Git Repo Pull
+$ sudo systemctl status docker
+```
 
-   1. Github Personal Access Token
+위 명령어를 통해서 EC2 서버에 Docker를 설치하고 정상적으로 설치되었는지 상태  확인을 해보자.
 
-      ![image-20220202110538557](server_ec2_docker_jenkins_deploy_2.assets/image-20220202110538557.png)
 
-      1. https://curryyou.tistory.com/344
 
-   2. /src/main/resources/ application.yml 파일 작성
+Docker 뿐만 아니라 Ubuntu 서버에서는 파일이나 디렉토리 작성/수정/삭제와 같은 행동에 대해서 권한 오류가 빈번히 발생한다. Docker의 경우에도 아래와 같은 권한 오류가 발생할 수 있다.
 
-   3. 프로젝트 루트 경로에 Dockerfile 생성
+![image-20220126152526589](server_ec2_docker_jenkins_deploy_2.assets/image-20220126152526589.png)
 
-      1. ```bash
-         
-         ```
+![image-20220202110650618](server_ec2_docker_jenkins_deploy_2.assets/image-20220202110650618.png)
 
-         
+권한을 부여하는 `chmod` 명령어로 파일에 대한 권한 변경을 할 수 있고, 위와 같은 오류를 해결할 수 있다.
 
-5. Spring Boot 프로젝트 빌드
+- 참고 자료 - https://github.com/occidere/TIL/issues/116
 
-   1. 권한 문제 - https://javalism.tistory.com/106
+```bash
+$ sudo chmod 666 /var/run/docker.sock
+```
 
-   ![image-20220202110447261](server_ec2_docker_jenkins_deploy_2.assets/image-20220202110447261.png)
 
-6. Docker
 
-   1. 이미지 생성
+권한 오류를 해결하고 `docker run` 명령어를 입력하면 아래와 같이 정상적으로 Spring Boot 서버가 실행되는  것을 확인할 수 있다.
 
-      1. ![image-20220202110650618](server_ec2_docker_jenkins_deploy_2.assets/image-20220202110650618.png)
-      2. 권한 문제 - https://github.com/occidere/TIL/issues/116
+![image-20220202111244125](server_ec2_docker_jenkins_deploy_2.assets/image-20220202111244125.png)
 
-   2. 컨테이너 생성 및 실행
+- `docker run -p [EC2포트]:[docker포트] [컨테이너 ID]`
 
-      ![image-20220202111244125](server_ec2_docker_jenkins_deploy_2.assets/image-20220202111244125.png)
 
-      - `docker run -p [EC2포트]:[docker포트] [컨테이너 ID]`
 
-7. Jenkins
-   1. 설치
+***
+
+##### 🙅‍♂️ 잠깐!!!
+
+`chmod` 명령어를 서버 루트나 특정 디렉토리에서 잘못 사용하게 되면 서버 자체에 대한 접근이 제한될 수 있으므로 주의해서 사용하자.
+
+***
+
+
+
+##### Docker 기본 명령어
+
+```bash
+$ docker images # 도커 이미지 확인
+
+$ docker rm <id> # 도커 컨테이너 삭제
+
+$ docker rmi <id> # 도커 이미지 삭제
+
+$ docker run  <image 이름> # 도커 이미지 실행
+```
+
+
+
+***
+
+
+
+기본적으로 Docker를 설치하고 정상적으로 작동하는 것을 확인했다면, 다음으로 Docker 컨테이너로 Jenkins를 띄우기 위해서 Jenkins를 설치해보자.
+
+
+
+### 4. Jenkins 설치
 
 
 
@@ -65,7 +89,7 @@ $ sudo apt update
 
 
 - GPG Error 발생시
-  - Error 로그에 나타난 16 자리의 키를 활용
+  - Error 로그에 나타난 16 자리의 키를 활용. 아래 코드를 작성한다.
 
 ```bash
 $ sudo apt-key adv --keyserver  keyserver.ubuntu.com --recv-keys [16자리키]
@@ -73,7 +97,7 @@ $ sudo apt-key adv --keyserver  keyserver.ubuntu.com --recv-keys [16자리키]
 
 
 
-이후 업데이트 재시도
+이후 `sudo apt update` 명령어로 업데이트를 재시도한다.
 
 
 
@@ -86,7 +110,7 @@ $ sudo systemctl status jenkins
 
 
 
-- Jenkins 접속 포트 변경
+Jenkins 접속 포트 변경이 필요할 시 아래 코드로 포트  변경이 가능하다. 나의 경우 9000번 포트로 변경하고 사용하였다.
 
 ```bash
 $ sudo vi /etc/default/jenkins
@@ -97,7 +121,7 @@ HTTP_PORT = 9000
 
 
 
-- 서비스 재시작
+위  설정이 다 끝나면 Jenkins 서비스를 재시작 하자.
 
 ```bash
 $ sudo service jenkins restart
@@ -105,7 +129,7 @@ $ sudo service jenkins restart
 
 
 
-- 초기 비밀번호 확인
+Jenkins에 접속하기 위해서는 초기 비밀번호가 필요하다.  아래 명령어로 초기  비밀번호를 미리 확인해두자.
 
 ```bash
 $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
@@ -113,7 +137,7 @@ $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 
 
-- 9000 포트로 접속 후, 초기비밀번호 입력
+- `EC2 도메인:9000` 포트로 접속 후, 초기비밀번호 입력
 
 ![image-20220202112334673](server_ec2_docker_jenkins_deploy_2.assets/image-20220202112334673.png)
 
@@ -131,107 +155,13 @@ $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 
 
-2. Jenkins - Github 연동
+간단하게 EC2 서버에 Jenkins를 설치하고, 초기 비밀번호를 입력하고 접속 후 플러그인 설치까지 완료하였다.
 
-   
+위 과정이 완료되면 다음 단계로 넘어갈 수 있다.
 
-- SSH 키 생성
-
-```bash
-$ sudo mkdir /var/lib/jenkins/.ssh
-$ sudo ssh-keygen -t rsa -f /var/lib/jenkis/.ssh/id_rsa
-```
+***
 
 
 
-- Github Deploy Key 등록
-  - github 프로젝트 > Settings > Delpoy Keys > Add deploy key
-
-```bash
-# Public Key 찾기
-$ cat id_rsa.pub
-```
-
-퍼블릭 키 값을 찾고 해당하는 값을 등록
-
-
-
-- Jenkins Credential 등록
-
-Jenkins 관리 > Manage Credentials > Credentials > Domains (global) > Add credentials 클릭
-
-종류는 SSH Username with private key로 선택
-
-Private Key > Enter directly 체크 후, 프라이빗 키 입력
-
-```bash
-# Private Key 찾기
-$ cat id_rsa
-```
-
-
-
-##### Docker Hub 설정
-
-https://hub.docker.com 에서 회원가입, Repository 생성
-
-
-
-##### Jenkins - Docker 설정
-
-- Docker 그룹에 젠킨스 추가
-
-```bash
-$ sudo usermod -aG docker jenkins
-$ su - jenkins
-```
-
-
-
-- Docker 권한 변경
-
-```bash
-$ sudo chmod 666 /var/run/docker.sock
-```
-
-
-
-- 젠킨스에서 Docker 로그인
-
-```bash
-$ sudo su - jenkins
-$ docker login
-
-# 아이디, 비밀번호 입력
-```
-
-
-
-##### Jenkins Item
-
-- Item 생성하기 - Freestyle project
-
-
-
-- Github 정보 입력
-  - github Project 체크
-  - 소스코드 관리 > Git
-
-
-
-![image-20220202173232185](server_ec2_docker_jenkins_deploy_2.assets/image-20220202173232185.png)
-
-위와 같이 에러 발생시
-
-https 타입 대신 ssh 타입으로 git url을 설정
-
-
-
-![image-20220202173304277](server_ec2_docker_jenkins_deploy_2.assets/image-20220202173304277.png)
-
-에러가 사라짐!!
-
-
-
-##### 빌드 정보 입력
+#### [Server | EC2 & Docker Deploy with Jenkins Ⅲ](./server_ec2_docker_jenkins_deploy_3) 에서 계속...
 
