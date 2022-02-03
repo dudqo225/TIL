@@ -12,7 +12,7 @@
 
 사용자 정의 callback 을 이용하여 웹페이지나 애플리케이션의 동작을 향상시키거나 변경하는 방법이다.
 
-<br<
+<br>
 
 앞서 우리는 Github Repository의 Master 브랜치에 코드 푸쉬나 풀리퀘스트(PR) 같은 Action이 일어날 때 이를 Jenkins에서 캐치해야 한다고 이야기했다.
 
