@@ -10,6 +10,8 @@
 
 <br>
 
+![frontend-deploy](server_front_end_react_app_deploy_1.assets/frontend-deploy.png)
+
 흐름은 다음과 같다.
 
 1. React 앱 소스코드가 올라가 있는 GitHub Repository EC2 서버에 Clone 하기
@@ -183,10 +185,11 @@ $ yarn start
 
 ***
 
+<br>
 
+위 과정까지가 기본적인 소스 코드 내려받기, 환경 셋팅, 빌드를 완료한 것이다. 다음으로 우리 서비스를 좀 더 안정적으로 보안이 튼튼한 서비스로 만드는 단계 + Jenkins & Docker를 활용한 자동 배포 단계가 남아있다.
 
-위 과정까지가 기본적인 소스 코드 내려받기, 환경 셋팅, 빌드를 완료한 것이다. 다음으로 우리 서비스를 좀 더 안정적으로 보안이 튼튼한 서비스로 만드는 단계들이 남아있다.
+<br>
 
+#### [Server front-end React App deploy 2](./server_front_end_react_app_deploy_2.md)에서 계속...
 
-
-#### [Server front-end React App deploy 2]()에서 계속...

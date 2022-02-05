@@ -171,7 +171,7 @@ docker build --tag==[태그이름] .
 ```bash
 # 3. Docker run
 docker ps -q --filter name=[태그이름] | grep -q . && docker rm -f $(docker ps -aq --filter name=[태그이름])
-docker run -d --name 태그이름 -p [EC2포트]:[Docker포트] [태그이름]:latest
+docker run -d --name 태그이름 -p [EC2포트]:[Docker포트] -v [EC2디렉토리]:[Docker디렉토리] [태그이름]:latest
 ```
 
 <br>
@@ -188,7 +188,7 @@ Ubuntu에서 사용자에 따른 권한 오류 문제가 자주 발생한다. Gr
 
 첫째줄은 기존 실행중인 Docker Container 중에서 [태그이름]이 포함되어 있는 컨테이너를 조회하고, 삭제하는 명령어이다.
 
-둘째줄은 [태그이름]을 지정하고 EC2포트와 Docker포트를 연결하면서 Docker 이미지를 실행시키는 명령어이다. 내가 진행한 프로젝트의 경우 Spring Boot 프로젝트를 8081 포트로 할당하였기 때문에 `8081:8081` 로 설정하였다.
+둘째줄은 [태그이름]을 지정하고 EC2포트와 Docker포트를 연결하면서 Docker 이미지를 실행시키는 명령어이다. 내가 진행한 프로젝트의 경우 Spring Boot 프로젝트를 8081 포트로 할당하였기 때문에 `8081:8081` 로 설정하였다. 또한, **볼륨 마운트** 설정을 통해서 Docker 내부의 디렉토리와 호스트 서버의 디렉토리를 연결시켜주었다. 이를 통해서 프로필 사진을 저장하거나 파일 업로드 등의 기능을 원활하게 할 수 있다. 다른 글에서 볼륨 마운트에 관한 내용을 정리할 예정이다.
 
 <br>
 

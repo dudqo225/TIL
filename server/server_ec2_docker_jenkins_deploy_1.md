@@ -12,7 +12,7 @@
 
 본격적인 기록 작성에 앞서, 전반적인 흐름을 그림으로 표현해 보았다.
 
-![ec2_docker_jenkins_deploy](server_ec2_docker_jenkins_deploy_1.assets/ec2_docker_jenkins_deploy.jpg)
+![backend-deploy](server_ec2_docker_jenkins_deploy_1.assets/backend-deploy.png)
 
 **왼쪽** 에서 **오른쪽** 으로 흐름이 이어진다고 보면 된다.
 
@@ -22,7 +22,7 @@
 
 1. **Local** 에서 개발을 진행한다.
 2. **GitHub (또는 GitLab) Repository**에 코드 Push나 Pull Request와 같은 Action이 발생한다.
-3. GitHub Repository와 EC2에서 Docker 컨테이너로 띄워진 Jenkins는 **Web Hook**으로 연결되어 있다. Action이 발생하면 Web Hook을 통해서 Jenkins에서 이를 캐치하고 사전에 설정된대로 빌드가 이루어진다.
+3. GitHub Repository와 EC2에서 설치된 Jenkins는 **Web Hook**으로 연결되어 있다. Action이 발생하면 Web Hook을 통해서 Jenkins에서 이를 캐치하고 사전에 설정된대로 빌드가 이루어진다.
 4. Gradle을 통해서 Spring Boot 프로젝트에 대한 **Build**가 이루어지고, Dockerfile을 통해서 **Docker Image**가 생성된다.
 5. 이후 만들어진 **Docker Image**가 **Run**(실행)되면서 새로운 Docker 컨테이너로 **Spring Boot 프로젝트를 띄운다**.
 
