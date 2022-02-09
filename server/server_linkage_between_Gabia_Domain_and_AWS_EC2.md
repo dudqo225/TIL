@@ -56,7 +56,7 @@ $ sudo apt install certbot python3-certbot-nginx
 
 <br>
 
-![image-20220209115225200](C:\Users\YB\AppData\Roaming\Typora\typora-user-images\image-20220209115225200.png)
+![image-20220209115225200](server_linkage_between_Gabia_Domain_and_AWS_EC2.assets/image-20220209115225200.png)
 
 명령어가 정상적으로 동작한다면 위 이미지와 같이 설치가 진행될 것이다.
 
@@ -70,7 +70,7 @@ $ sudo certbot --nginx -d <도메인명> -d <www.도메인명>
 
 <br>
 
-![image-20220209115254576](C:\Users\YB\AppData\Roaming\Typora\typora-user-images\image-20220209115254576.png)
+![image-20220209115254576](server_linkage_between_Gabia_Domain_and_AWS_EC2.assets/image-20220209115254576.png)
 
 마찬가지로, 명령어가 동작하면 공개키와 비밀키가 생성된다.
 
@@ -80,7 +80,7 @@ $ sudo certbot --nginx -d <도메인명> -d <www.도메인명>
 
 SSL 인증서 생성이 완료되면, 이전에 보았던 **IMPORTANT NOTES** 메시지를 확인할 수 있다. 이 노트에는 공개키/비밀키 저장 위치와 인증서 만료일자 등의 정보가 표시된다.
 
-![image-20220209115133408](C:\Users\YB\AppData\Roaming\Typora\typora-user-images\image-20220209115133408.png)
+![image-20220209115133408](server_linkage_between_Gabia_Domain_and_AWS_EC2.assets/image-20220209115133408.png)
 
 <br>
 
@@ -169,4 +169,4 @@ $ sudo systemctl reload nginx
 
 가비아 도메인 및 HTTPS 보안까지 잘 적용된 것을 확인할 수 있다!
 
-![image-20220209115402010](C:\Users\YB\AppData\Roaming\Typora\typora-user-images\image-20220209115402010.png)
+![image-20220209115402010](server_linkage_between_Gabia_Domain_and_AWS_EC2.assets/image-20220209115402010.png)
