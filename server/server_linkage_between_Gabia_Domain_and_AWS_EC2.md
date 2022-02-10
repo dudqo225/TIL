@@ -170,3 +170,16 @@ $ sudo systemctl reload nginx
 가비아 도메인 및 HTTPS 보안까지 잘 적용된 것을 확인할 수 있다!
 
 ![image-20220209115402010](server_linkage_between_Gabia_Domain_and_AWS_EC2.assets/image-20220209115402010.png)
+
+***
+
+##### 추가
+
+위와 같은 방법으로 도메인을 구입하고 적용하고 나면, 
+
+`FE` - ssafymate.site → `BE` - i6a402.p.ssafy.io 로 도메인이 달라지게 된다. 
+
+이에 따른 **CORS** 오류가 발생할 수 있으므로, 해당 도메인을 Spring Boot 설정 파일에 추가해주면 된다.
+
+또한, `http` 일반 / `https` 보안 설정에 따른 **CORS**  에러 및 **Mixed Content** 에러가 발생할 수 있으므로 이 부분을 염두에 두고 제대로 설정해주어야 한다.
+

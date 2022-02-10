@@ -133,11 +133,21 @@ $ cat /var/log/nginx/error.log
 
 <br>
 
-결론적으로, 저 문제는 **React 앱이 서버에서 실행되지 않아 발생한 에러**였다. 😂
+***
+
+[잘못된 내용]
+
+~~결론적으로, 저 문제는 **React 앱이 서버에서 실행되지 않아 발생한 에러**였다. 😂~~
 
 <br>
 
-지금까지 진행한 과정은 Nginx를  설치하고 이를 우리 프로젝트의 `build` 디렉토리와 연결만 한 것이다. 실제로 React 프로젝트(`:3000`)를 가동하고 `http:<도메인>` 주소로 접속해야 정상적으로 웹 서버가 구동이 된다.
+~~지금까지 진행한 과정은 Nginx를  설치하고 이를 우리 프로젝트의 `build` 디렉토리와 연결만 한 것이다. 실제로 React 프로젝트(`:3000`)를 가동하고 `http:<도메인>` 주소로 접속해야 정상적으로 웹 서버가 구동이 된다.~~ 3000번 포트를 열고 이 주소를 프록시 서버로 Nginx에 연동하는 과정은 추후 Docker를 사용하는 파트에서 작성할 예정이다.
+
+***
+
+React 앱을 빌드하면 `/build` 경로로 프로젝트 빌드 파일이 작성된다. 이 경로를 Nginx에 연결만 해줘도 우리는 포트없이 도메인만으로 서비스에 접속할 수 있다.
+
+**https://<도메인>** 주소를 입력하면 접근이 가능하다.
 
 <br>
 
@@ -246,7 +256,7 @@ server {
    proxy_read_timeout 600s;
    proxy_send_timeout 600s;
 
-   proxy_pass http://i6a402.p.ssafy.io:3000;
+   # proxy_pass http://i6a402.p.ssafy.io:3000;
 
    proxy_redirect off;
    charset utf-8;
@@ -287,3 +297,4 @@ $ sudo service nginx restart
 <br>
 
 #### [Server front-end React App deploy 3]()에서 계속...
+
