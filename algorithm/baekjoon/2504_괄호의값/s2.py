@@ -18,22 +18,24 @@ for i in range(len(brackets)):
         q.append(brackets[i])
 
     elif brackets[i] == ')':
-        if q[-1] == '[' or not q:
+        if not q or q[-1] == '[' :
             ans = 0
             break
-        if
+        if brackets[i-1] == '(':
+            ans += tmp
+        q.pop()
+        tmp //= 2
 
-    elif brackets[i] == ']':
-        pass
+    else:
+        if not q or q[-1] == '(':
+            ans = 0
+            break
+        if brackets[i-1] == '[':
+            ans += tmp
+        q.pop()
+        tmp //= 3
 
-ans = 0
-if not check:
+if q:
     print(0)
 else:
-    for i in q:
-        if i in ['(', ')', '[', ']']:
-            ans = 0
-            break
-        else:
-            ans += i
     print(ans)
