@@ -1,6 +1,6 @@
 # Programmers | 헤비 유저가 소유한 장소 (SQL)
 
-> 본 문제의 저작권은 BAEKJOON에 있습니다.
+> 본 문제의 저작권은 프로그래머스에 있습니다.
 >
 > [헤비 유저가 소유한 장소 링크](https://programmers.co.kr/learn/courses/30/lessons/77487)
 
