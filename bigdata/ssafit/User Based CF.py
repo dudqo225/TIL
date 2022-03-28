@@ -174,9 +174,11 @@ def recommendExercise(user_id, dataframe, sim_mat):
                 sim.append(sim_dict[person])
         
         # KNN - K : 3
-        pred = ((sim[0]*rating[0]) + (sim[1]*rating[1]) + (sim[2]*rating[2])) / (sum(sim[:3]))
-        
-        recommender[exercise] = round((pred + 5) * 10)
+        if sum(sim[:3]) != 0:
+            pred = ((sim[0]*rating[0]) + (sim[1]*rating[1]) + (sim[2]*rating[2])) / (sum(sim[:3]))    
+            recommender[exercise] = round((pred + 5) * 10)
+        else:
+            recommender[exercise] = 50
     
     rec_dic = {"rec_list": "{}".format(dict(sorted(recommender.items(), key=operator.itemgetter(1), reverse=True)[:10]))}
 
