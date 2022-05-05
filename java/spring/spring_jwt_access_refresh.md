@@ -113,3 +113,61 @@ public String createJwtRefreshToken(String value) {
 
 <br>
 
+클라이언트에서 요청을 보낼 때 JWT는 `Header` 에 담겨서 보내진다.
+
+- 일반적으로 `Header`에서 **Authorization** 이라는 `key` 에 담아서 요청을 보낸다.
+
+<br>
+
+### TokenProvider Class
+
+```java
+// Request Header에서 Authorization을 뽑아내는 메소드
+public String resolveAccessToken(HttpServletRequest request) {
+  return request.getHeader("Authorization");
+}
+
+// JWT의 Body의 Subject에 담겨있는 사용자 정보를 뽑아내는 메소드
+public String getUserId(String token) {
+  return getClaimsFromJwtToken(token).getBody().getSubject();
+}
+
+// 토큰의 만료기간을 확인하고 유효성을 검증하는 메소드
+public boolean isTokenValid(String jwtToken) {
+  try {
+    Jws<Claims> claims = getClaimsFromJwtToken(jwtToken);
+    return !claims.getBody().getExpiration().before(new Date());
+  } catch (Exception e) {
+    return false;
+  }
+}
+
+// 백엔드에 저장되어 있는 JWT SecretKey를 활용하여 토큰을 확인하고 Claims을 추출하는 메소드
+public Jws<Claims> getClaimsFromJwtToken(String jwtToken) throws JwtException {
+  return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(jwtToken);
+}
+```
+
+- **isTokenValid**
+  - 입력받은 JWT에서 `Claims`를 뽑아낸다. `Claims`에는 토큰을 생성하면서 주입한 여러가지 정보들이 담겨져 있다.
+  - `getExpiration().` 메소드로 토큰의 유효기간 정보를 뽑아내고 현재 시간(`new Date()`)과 비교하여 아직 유효한지 or 만료되었는지 검증한다.
+
+<br>
+
+### Authentication 객체
+
+```java
+// JWT를 활용하여 Authentication 객체를 생성 → Security에 활용
+public Authentication getAuthentication(String token) {
+  CustomUserDetails userDetails = userDetailsService.loadUserByUsername(this.getUserId(token));
+  return new UsernamePasswordAuthenticationToken(userDetails.getUsername(), userDetails.getPassword(), userDetails.getAuthorities());
+}
+```
+
+- 위 메소드는 JWT를 활용하여 사용자 Authentication 객체를 생성하는 메소드이다. 추후 Spring Security에서 활용할 수 있으며 자세한 내용은 **@AuthenticationPrincipal** 항목에서 다룰 것이다.
+
+<br>
+
+***
+
+[JWT - Access & Refresh Token 2]()에서 계속...
