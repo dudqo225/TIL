@@ -6,9 +6,6 @@
 
 > 1. Access & Refresh Token 생성
 > 2. Token 유효성 검증
-> 3. JWT Filter 적용
-> 4. @AuthenticationPrincipal
-> 5. 401 & 403 
 
 <br>
 
