@@ -68,7 +68,7 @@
 - 비밀번호 해싱을 처리하여 사용자의 암호를 문자열 데이터로 설정
 - User 객체를 저장하지는 않음
 
-
+<br>
 
 #### REST framework JWT Auth Package
 
@@ -78,7 +78,7 @@
 $ pip install djangorestframework-jwt
 ```
 
-
+<br>
 
 - DRF 각 view 함수에 대한 default 권한 및 인증 설정
 - 회원 인증 여부와 JWT 토큰 인증에 관한 설정
@@ -96,7 +96,7 @@ REST_FRAMEWORK = {
 }
 ```
 
-
+<br>
 
 - url.py에 URL 경로를 추가하여, 사용자 이름/비밀번호가 포함된 POST 요청을 통해 토큰을 얻을 수 있도록 함
 
@@ -114,7 +114,7 @@ urlpatterns = [
 ]
 ```
 
-
+<br>
 
 #### Login
 
@@ -135,7 +135,7 @@ methods: {
 }
 ```
 
-
+<br>
 
 #### Logout
 
@@ -153,7 +153,7 @@ methods: {
 }
 ```
 
-
+<br>
 
 #### Signup 문제 해결
 
@@ -174,7 +174,7 @@ def signup(request):
     ...
 ```
 
-
+<br>
 
 #### CRUD with Authentication
 
